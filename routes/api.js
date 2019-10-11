@@ -57,7 +57,13 @@ router.get('/result', function(req, res, next) {
   res.json(newResult);
 });
 /**
+ * The client can now take this value and check that the result did not
+ * change after the roll was generated.
  *
+ * Query Parameters:
+ * clientSeed - String - The client seed that was used to generate the result
+ * serverSeed - String - The server seed that was used to generate the result
+ * nonce - Number - The nonce of the result
  */
 router.get('/verify', function(req, res, next) {
   // get the data provided by the client
