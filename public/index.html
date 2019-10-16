@@ -1,0 +1,97 @@
+<html>
+  <head>
+    <title>Express</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Material+Icons&display=block"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="six columns">
+          <fieldset-element>
+            <span slot="title">Roll</span>
+            <div class="content-group">
+              Hashed server seed is:
+              <code-display id="hashed-server-seed"></code-display>
+            </div>
+            <div class="content-group">
+              <label for="client-seed-input">Client seed:</label>
+              <input type="text" class="u-full-width" id="client-seed-input"></input>
+            </div>
+            <button id="roll-buton" class="button-primary u-full-width">
+              Roll
+            </button>
+            <div style="display: none" id="roll-results-container">
+              <h2 id="roll-result" class="text-center"></h2>
+              <div class="content-group">
+                Server seed:
+                <code-display id="server-seed"></code-display>
+              </div>
+              <div class="content-group">
+                Nonce:
+                <code-display id="nonce"></code-display>
+              </div>
+            </div>
+          </fieldset-element>
+        </div>
+        <div class="six columns">
+          <fieldset-element>
+            <span slot="title">Verify</span>
+            <form id="verify-bet-form">
+              <div class="row">
+                <div class="six columns">
+                  <label for="verify-client-seed-input">Client seed</label>
+                  <input
+                    required
+                    class="u-full-width"
+                    type="text"
+                    id="verify-client-seed-input"
+                  />
+                </div>
+                <div class="six columns">
+                  <label for="verify-nonce-input">Nonce</label>
+                  <input
+                    required
+                    class="u-full-width"
+                    type="text"
+                    id="verify-nonce-input"
+                  />
+                </div>
+              </div>
+              <div>
+                <label for="verify-server-seed-input">Server seed</label>
+                <input
+                  required
+                  class="u-full-width"
+                  type="text"
+                  id="verify-server-seed-input"
+                />
+              </div>
+              <button type="submit" class="button-primary u-full-width">
+                Verify roll
+              </button>
+            </form>
+            <div style="display: none" id="verify-roll-results-container">
+              <h2 id="verify-roll-result" class="text-center"></h2>
+            </div>
+          </fieldset-element>
+        </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+    <script src="/javascripts/components/CodeDisplay.js"></script>
+    <script src="/javascripts/components/FieldsetElement.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="/javascripts/script.js"></script>
+    <script src="/javascripts/utils.js"></script>
+  </body>
+</html>
